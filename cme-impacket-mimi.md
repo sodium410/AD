@@ -1,3 +1,25 @@
+**Windows UAC**  
+UAC enforces principle of least priv when user authenticates by running as standard user elevation requiring a consent.  
+hence if smb shell, escalation requires GUI to say Yes or bypass UAC.  
+Blocks SMB/WMI/WINRM remote executions and lateral movements via local accounts   
+
+CME checks if it can perform admin-level actions, e.g.:  Access ADMIN$ share, Execute commands via WMI/SMB and Dump SAM/LSA  
+
+Case1: local account part of local admin group -  → NOT shown as “Pwned”  
+UAC remote restrictions apply to local accounts  
+When you authenticate remotely (_SMB/WMI/WinRM_): The access token is filtered and Admin privileges are stripped  
+registry entry controlling this: LocalAccountTokenFilterPolicy 0 = UAC filterning ON(restricted) if this is 1 its high risk finding.  
+
+Case2: Domain user in local Administrators → shown as “Pwned”  
+Domain accounts are NOT subject to UAC remote restrictions  
+When authenticated remotely: They receive a full admin token  
+
+Case3: UAC is effectively disabled for the built-in Administrator  
+
+**However** — still exploitable locally, If attacker gets shell on target: Local admin → full compromise possible.  
+example: webshell/revshell+privesc  
+problem is only for remote authentications  
+
 **Crackmapexec**:  
 crackmapexec smb -u soda -p soda 10.1.1.1/24 -x "type C:\flag.txt"  
 crackmapexec smb 10.1.1.10/24 -u fcastle -d marvel.local -p Password1  //pass the password  
